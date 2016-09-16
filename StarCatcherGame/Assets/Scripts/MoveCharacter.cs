@@ -35,11 +35,11 @@ public class MoveCharacter : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Space) && jumpCount < jumpCountMax - 1) {
 
 			jumpCount++;
-			temPos.y = jumpSpeed;
+			//temPos.y = jumpSpeed;
 		}
 
 		if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.S)){
-			StartCoroutine ()
+			//StartCoroutine ();
 
 		}
 	}
