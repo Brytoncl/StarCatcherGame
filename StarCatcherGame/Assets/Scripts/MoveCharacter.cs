@@ -3,6 +3,10 @@ using System.Collections;
 
 public class MoveCharacter : MonoBehaviour {
 
+	public CharacterController myCC;
+
+	private Vector3 tempPos;
+
 	public float speed = 1; 
 	public float gravity = 1;
 	public float jumpSpeed = 1;
@@ -14,10 +18,11 @@ public class MoveCharacter : MonoBehaviour {
 
 	IEnumerator Slide ()  
 	{
-		float speedTemp = speed;
-		//set a temp vaar to the callue of slideDuration
 		int durationTemp = slideDuration;
 		//while loop runs while the slideDuration is greater than 0
+		float speedTemp = speed;
+		//set a temp vaar to the callue of slideDuration
+
 		while (slideDuration > 0){
 
 			//decrease slideDuration
@@ -27,19 +32,37 @@ public class MoveCharacter : MonoBehaviour {
 			//new creates an instance of an object
 			//waitforseconds is an object that waits for seconds
 			yield return new WaitForSeconds (slideTime);
+			print ("sliding");
+
 
 		}
+		speed = speedTemp;
 		slideDuration = durationTemp;
 	}
+	void Start () {
+		myCC = GetComponent<CharacterController> ();
+	}
 	void Update () {
+
+		tempPos.y -= gravity;
+
+		tempPos.x = speed * Input.GetAxis ("Horizontal");
+
+		myCC.Move (tempPos * Time.deltaTime);
+
 		if (Input.GetKeyDown (KeyCode.Space) && jumpCount < jumpCountMax - 1) {
 
 			jumpCount++;
-			//temPos.y = jumpSpeed;
+
+			tempPos.y = jumpSpeed;
 		}
 
 		if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.S)){
-			//StartCoroutine ();
+			StartCoroutine (Slide());
+
+		}
+		if (Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.S)){
+			StartCoroutine (Slide());
 
 		}
 	}
