@@ -10,7 +10,7 @@ public class RecycleLevel : MonoBehaviour
 
 	void SendThisHandler (SendToRecycler _recycler)
 	{
-		print (_recycler.name);
+		recycleList.Add (_recycler);
 		print (recycleList.Count);
 	}
 
@@ -21,9 +21,12 @@ public class RecycleLevel : MonoBehaviour
 		SendToRecycler.SendThis += SendThisHandler;
 
 	}
-	void OnTriggerEnter () {
+	void OnTriggerEnter () 
+	{
+		int i = UnityEngine.Random.Range (0, recycleList.Count - 1); 
 		movePos.x = Statics.nextPosition;
-		recycleList [0].transform.position = movePos;
+		recycleList[i].transform.position = movePos;
+		recycleList.RemoveAt (i);
 		Statics.nextPosition += Statics.distance;
 	}
 	
