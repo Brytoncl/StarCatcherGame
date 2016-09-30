@@ -28,7 +28,7 @@ public class RecycleLevel : MonoBehaviour
 		i = UnityEngine.Random.Range (0, recycleList.Count - 1); 
 		movePos.x = Statics.nextPosition;
 		recycleList[i].transform.position = movePos;
-		if (recycleList.Count > 0);
+		recycleList.RemoveAt (i);
 		Statics.nextPosition += Statics.distance;
 	}
 	
