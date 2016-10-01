@@ -5,15 +5,14 @@ using System.Collections.Generic;
 public class RecycleLevel : MonoBehaviour 
 {
 
-	public List<SendToRecycler> recycleList;
-	private Vector3 movePos;
 
+	private Vector3 movePos;
+	public List<SendToRecycler> recycleList;
 	private int i = 0;
 
 	void SendThisHandler (SendToRecycler _recycler)
 	{
 		recycleList.Add (_recycler);
-		print (recycleList.Count);
 	}
 
 	// Use this for initialization
@@ -28,8 +27,9 @@ public class RecycleLevel : MonoBehaviour
 		i = UnityEngine.Random.Range (0, recycleList.Count - 1); 
 		movePos.x = Statics.nextPosition;
 		recycleList[i].transform.position = movePos;
-		recycleList.RemoveAt (i);
 		Statics.nextPosition += Statics.distance;
+		if (recycleList.Count > 0)
+		recycleList.RemoveAt (i);
 	}
 	
 

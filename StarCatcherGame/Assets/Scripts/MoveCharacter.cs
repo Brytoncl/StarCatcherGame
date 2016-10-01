@@ -11,7 +11,7 @@ public class MoveCharacter : MonoBehaviour {
 	public float gravity = 1;
 	public float jumpSpeed = 1;
 	public int jumpCount = 0;
-	public int jumpCountMax = 2;
+	public int jumpCountMax = 1;
 
 	public int slideDuration = 20;
 	public float slideTime = 0.01f;
@@ -50,20 +50,28 @@ public class MoveCharacter : MonoBehaviour {
 
 		myCC.Move (tempPos * Time.deltaTime);
 
-		if (Input.GetKeyDown (KeyCode.Space) && jumpCount < jumpCountMax - 1) {
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			
+			if (myCC.isGrounded) {
+				jumpCount = 0;
+				tempPos.y = jumpSpeed;
+				jumpCount++;
+			}
+			if (!myCC.isGrounded && jumpCount < 	jumpCountMax) {
+				 
+				jumpCount++;
 
-			jumpCount++;
+				tempPos.y = jumpSpeed;
+			}
 
-			tempPos.y = jumpSpeed;
-		}
+			if (Input.GetKeyDown (KeyCode.RightArrow) && Input.GetKeyDown (KeyCode.S)) {
+				StartCoroutine (Slide ());
 
-		if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.S)){
-			StartCoroutine (Slide());
+			}
+			if (Input.GetKeyDown (KeyCode.LeftArrow) && Input.GetKeyDown (KeyCode.S)) {
+				StartCoroutine (Slide ());
 
-		}
-		if (Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.S)){
-			StartCoroutine (Slide());
-
+			}
 		}
 	}
 }

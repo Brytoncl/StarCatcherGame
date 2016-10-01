@@ -8,18 +8,10 @@ public class SendToRecycler : MonoBehaviour {
 
 	public Transform cube;
 
-	/*IEnumerator WaitToRecycle() {
-		yield return new WaitForSeconds (1f);
-		canRecycle = true;
-	}*/
-
 
 	public static Action <SendToRecycler> SendThis;
 
 	void Start () {
-		/*if (canRecycle)
-		SendThis (this);
-		canRecycle = false;*/
 		cube = this.GetComponent<Transform> ();
 		if (canRecycle && SendThis != null) {
 			SendThis (this);
@@ -28,7 +20,6 @@ public class SendToRecycler : MonoBehaviour {
 	}
 
 	void OnTriggerEnter () {
-		//StartCoroutine ("WaitToRecycle");
 		canRecycle = true;
 		Start ();
 	}
