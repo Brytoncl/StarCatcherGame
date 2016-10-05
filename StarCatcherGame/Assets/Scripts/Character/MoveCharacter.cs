@@ -68,7 +68,7 @@ public class MoveCharacter : MonoBehaviour {
 				StartCoroutine (Slide ());
 
 			}
-			if (Input.GetKeyDown (KeyCode.LeftArrow) && Input.GetKeyDown (KeyCode.S)) {
+			if (Input.GetKeyDown (KeyCode.DownArrow) && Input.GetKeyDown (KeyCode.S)) {
 				StartCoroutine (Slide ());
 
 			}

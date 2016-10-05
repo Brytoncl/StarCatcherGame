@@ -7,21 +7,29 @@ public class CharacterFlipArt : MonoBehaviour {
 
 	public bool forward = true;
 
-	void FlipCharacter (bool _b) 
+	void FlipCharacter (KeyCode _keyCode) 
 	{
-		characterArt.Rotate (0, 180, 0);
-		forward = _b;
-	}
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetKeyDown(KeyCode.RightArrow) && forward)
-		{
-			FlipCharacter (false);
+
+		switch (_keyCode) {
+		case KeyCode.LeftArrow:
+			print ("left");
+			if (forward) {
+				characterArt.Rotate (0, 180, 0);
+				forward = false;
+			}
+			break;
+		case KeyCode.RightArrow:
+			print ("right");
+			if (!forward) {
+				characterArt.Rotate (0, 180, 0);
+				forward = true;
+			}
+				break;
+			}
 		}
-		if(Input.GetKeyDown(KeyCode.LeftArrow) && !forward)
-		{
-			FlipCharacter (true);
-		}
-	
+
+	void Start ()
+	{
+		UserInputs.UserInput += FlipCharacter;
 	}
 }
