@@ -12,14 +12,12 @@ public class CharacterFlipArt : MonoBehaviour {
 
 		switch (_keyCode) {
 		case KeyCode.LeftArrow:
-			print ("left");
 			if (forward) {
 				characterArt.Rotate (0, 180, 0);
 				forward = false;
 			}
 			break;
 		case KeyCode.RightArrow:
-			print ("right");
 			if (!forward) {
 				characterArt.Rotate (0, 180, 0);
 				forward = true;

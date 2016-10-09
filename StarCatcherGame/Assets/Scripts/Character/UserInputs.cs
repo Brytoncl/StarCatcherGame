@@ -14,7 +14,6 @@ public class UserInputs : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.RightArrow) && UserInput != null)
 		{
-
 			UserInput(KeyCode.RightArrow);
 		}
 		if(Input.GetKeyDown(KeyCode.LeftArrow) && UserInput != null)
