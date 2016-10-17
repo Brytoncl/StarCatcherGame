@@ -9,9 +9,14 @@ public class loops : MonoBehaviour {
 	void Start () {
 		myScope = new ScopeAndAccessModifiers ();
 		myArrays = new ArraysandLists ();
+		PopulateEnemies ();
 		// this gives me access to the variables and functions in those scripts if I reference them first.
 	}
-
+	void PopulateEnemies () {
+		while (myScope.enemyCount < 5) {
+			myScope.enemyCount += 1;
+		}
+	}
 }
 // while loop 
 //while (int > = or <) {
