@@ -3,7 +3,7 @@
 	using System.Collections;
 	using UnityEngine.SceneManagement; // neded in order to load scenes
 
-	public class menuScript : MonoBehaviour 
+	public class MenuScript : MonoBehaviour 
 	{
 		public Canvas quitMenu;
 		public Button startText;

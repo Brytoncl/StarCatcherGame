@@ -7,8 +7,6 @@ public class MoveCharacter : MonoBehaviour {
 
 	private Vector3 tempPos;
 
-	private Animation myAnimation;
-
 	public float speed = 1; 
 	public float gravity = 1;
 	public float jumpSpeed = 1;
@@ -18,9 +16,11 @@ public class MoveCharacter : MonoBehaviour {
 	public int slideDuration = 20;
 	public float slideTime = 0.01f;
 
-//	public void MoveHorizontal () {
-//		myAnimation.myAnimator.SetFloat("speed", Mathf.Abs (Input.GetAxis("Horizontal")));
-//	}
+	private float _h; 
+
+//public void MoveHorizontal () {
+//	myAnimation.myAnimator.SetFloat("speed", Mathf.Abs (Input.GetAxis("Horizontal")));
+//}
 
 	IEnumerator Slide ()  
 	{
@@ -47,9 +47,9 @@ public class MoveCharacter : MonoBehaviour {
 	}
 	void Start () {
 		myCC = GetComponent<CharacterController> ();
-		myAnimation = new Animation ();
 	}
 	void Update () {
+
 
 		tempPos.y -= gravity;
 
