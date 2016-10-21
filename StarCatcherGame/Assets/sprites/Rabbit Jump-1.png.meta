@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 77ac76b7b0f9647d0a5e370fba43a493
-timeCreated: 1476906215
+guid: 28d93fd34a3cb4c5c8fcf4a4d49cd21a
+timeCreated: 1477074247
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,13 +12,10 @@ TextureImporter:
     21300010: Rabbit Jump-1_5
     21300012: Rabbit Jump-1_6
     21300014: Rabbit Jump-1_7
-    21300016: Rabbit Jump-1_8
-    21300018: Rabbit Jump-1_9
-    21300020: Rabbit Jump-1_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -41,7 +38,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: 1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -67,71 +64,6 @@ TextureImporter:
       name: Rabbit Jump-1_0
       rect:
         serializedVersion: 2
-        x: 835
-        y: 165
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rabbit Jump-1_1
-      rect:
-        serializedVersion: 2
-        x: 980
-        y: 23
-        width: 204
-        height: 247
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rabbit Jump-1_2
-      rect:
-        serializedVersion: 2
-        x: 1297
-        y: 29
-        width: 232
-        height: 212
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rabbit Jump-1_3
-      rect:
-        serializedVersion: 2
-        x: 1624
-        y: 33
-        width: 235
-        height: 206
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rabbit Jump-1_4
-      rect:
-        serializedVersion: 2
-        x: 1967
-        y: 24
-        width: 228
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rabbit Jump-1_5
-      rect:
-        serializedVersion: 2
         x: 46
         y: 23
         width: 223
@@ -142,46 +74,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Rabbit Jump-1_6
-      rect:
-        serializedVersion: 2
-        x: 538
-        y: 133
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rabbit Jump-1_7
-      rect:
-        serializedVersion: 2
-        x: 659
-        y: 23
-        width: 211
-        height: 135
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rabbit Jump-1_8
-      rect:
-        serializedVersion: 2
-        x: 2267
-        y: 23
-        width: 223
-        height: 123
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rabbit Jump-1_9
+      name: Rabbit Jump-1_1
       rect:
         serializedVersion: 2
         x: 342
@@ -194,13 +87,78 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Rabbit Jump-1_10
+      name: Rabbit Jump-1_2
       rect:
         serializedVersion: 2
-        x: 1860
-        y: 121
-        width: 4
-        height: 4
+        x: 659
+        y: 23
+        width: 211
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Rabbit Jump-1_3
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 23
+        width: 204
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Rabbit Jump-1_4
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 29
+        width: 232
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Rabbit Jump-1_5
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 33
+        width: 235
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Rabbit Jump-1_6
+      rect:
+        serializedVersion: 2
+        x: 1967
+        y: 24
+        width: 228
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Rabbit Jump-1_7
+      rect:
+        serializedVersion: 2
+        x: 2267
+        y: 23
+        width: 223
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
