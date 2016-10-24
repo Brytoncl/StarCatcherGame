@@ -19,5 +19,27 @@ public class Animation : MonoBehaviour {
 		_h = Mathf.Abs (myMoveCharacter.myCC.velocity.x);
 		myAnimator.SetFloat ("speed", _h);
 
-}
+		if (!myMoveCharacter.myCC.isGrounded)
+			myAnimator.SetLayerWeight (1, 1);
+		else {
+			myAnimator.SetLayerWeight (1, 0);
+			myAnimator.SetBool ("Jump", false);
+			myAnimator.SetBool ("DoubleJump",false);
+		}
+		if (Input.GetKeyDown (KeyCode.Space)) {
+
+
+			if (myMoveCharacter.myCC.isGrounded) {
+				myAnimator.SetBool ("Jump", true);
+
+			}
+			if (!myMoveCharacter.myCC.isGrounded && myMoveCharacter.jumpCount < myMoveCharacter.jumpCountMax) {
+				myAnimator.SetBool ("Jump", false);
+				myAnimator.SetBool ("DoubleJump",true);
+
+			}
+		}
+
+	}
+				
 }
