@@ -1,23 +1,47 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class CloneStar : MonoBehaviour {
+
 	public Transform[] spawnPoints;
-	public float spawnFrequency = 1f;
-	public Transform star;
+	public GameObject[] stars;
+	public float spawnFrequency = 7;
+	public float DeactivateTime = 6;
 	public bool canSpawnStars = true;
 
-	private int _i = 0;
+	private int i = 0;
+	private int j = 0;
 
-	IEnumerator SpawnStars () {
-		while (canSpawnStars) {
-			
-			_i = Random.Range (0, spawnPoints.Length-1);
-			Instantiate(star, spawnPoints[_i].position, Quaternion.identity);
+	IEnumerator DeactivateStars () {
+		yield return new WaitForSeconds (DeactivateTime);
+		stars [j].SetActive (false);
+	}
+
+	IEnumerator SpawnStars ()
+	{
+		while (canSpawnStars)
+		{
+			i = Random.Range(0, spawnPoints.Length - 1);
+			stars[j].SetActive(true);
+			stars[j].transform.position = spawnPoints[i].position;
+			StartCoroutine (DeactivateStars ());
+
 			yield return new WaitForSeconds(spawnFrequency);
+
+			if (j < stars.Length-1)
+			{
+				j++;
+			} else
+			{
+				j = 0;
+			}
+			//Instantiate(star, spawnPoints[i].position, Quaternion.identity);
+
 		}
 	}
 	void Start () {
 		StartCoroutine(SpawnStars());
 	}
+
 }
