@@ -25,6 +25,7 @@ GameObject:
   - 54: {fileID: 54000014197457338}
   - 114: {fileID: 114000014130389622}
   - 108: {fileID: 108000013741337716}
+  - 114: {fileID: 114000011047867168}
   m_Layer: 16
   m_Name: Star (1)
   m_TagString: Untagged
@@ -130,6 +131,19 @@ Light:
   m_BounceIntensity: 0.49
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114000011047867168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010739062702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30dcc4acc6ed4d83bd7620eee43b12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starCount: 0
+  starCountText: {fileID: 0}
 --- !u!114 &114000014130389622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,11 +155,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbed6d62e87a8479d866049cb075a36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceTime: 5
-  forceDuration: 0.05
-  forceRange: 100
-  torqueRange: 0
-  endTime: 4
+  forceTime: 10
+  forceDuration: 0.1
+  forceRange: 10
+  torqueRange: 2
+  endTime: 3
+  spawners: []
+  stars: []
 --- !u!135 &135000011671944242
 SphereCollider:
   m_ObjectHideFlags: 1

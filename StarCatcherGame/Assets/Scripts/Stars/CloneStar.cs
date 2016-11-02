@@ -10,6 +10,7 @@ public class CloneStar : MonoBehaviour {
 	public float DeactivateTime = 6;
 	public bool canSpawnStars = true;
 
+
 	private int i = 0;
 	private int j = 0;
 
@@ -23,8 +24,8 @@ public class CloneStar : MonoBehaviour {
 		while (canSpawnStars)
 		{
 			i = Random.Range(0, spawnPoints.Length - 1);
-			stars[j].SetActive(true);
 			stars[j].transform.position = spawnPoints[i].position;
+			stars[j].SetActive(true);
 			StartCoroutine (DeactivateStars ());
 
 			yield return new WaitForSeconds(spawnFrequency);
@@ -42,6 +43,7 @@ public class CloneStar : MonoBehaviour {
 	}
 	void Start () {
 		StartCoroutine(SpawnStars());
+
 	}
 
 }

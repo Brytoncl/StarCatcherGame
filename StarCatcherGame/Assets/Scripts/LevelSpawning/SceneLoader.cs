@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
 
+
+	public SceneLoader mySceneLoader;
 	// Use this for initialization
 	public void StartGame ( ){
 		SceneManager.LoadScene (1);
@@ -11,6 +13,7 @@ public class SceneLoader : MonoBehaviour {
 
 	void Start () {
 		Statics.nextPosition = Statics.startPosition;
+
 	}
 
 	void OnTriggerEnter () {
