@@ -3405,7 +3405,7 @@ Prefab:
     - target: {fileID: 108000013741337716, guid: 3c3c9ff9e12284053b0dc0b78713b915,
         type: 2}
       propertyPath: m_Range
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 108000013741337716, guid: 3c3c9ff9e12284053b0dc0b78713b915,
         type: 2}
