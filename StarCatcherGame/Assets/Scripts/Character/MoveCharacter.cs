@@ -18,6 +18,8 @@ public class MoveCharacter : MonoBehaviour {
 
 	private float _h; 
 
+	//private bool crash = true;
+
 //public void MoveHorizontal () {
 //	myAnimation.myAnimator.SetFloat("speed", Mathf.Abs (Input.GetAxis("Horizontal")));
 //}
@@ -46,10 +48,25 @@ public class MoveCharacter : MonoBehaviour {
 		slideDuration = durationTemp;
 	}
 	void Start () {
+//		StartCoroutine ("MoveHandler");
 		myCC = GetComponent<CharacterController> ();
 	}
-	void Update () {
 
+//	IEnumerator MoveHandler () { 
+//		while (true) {
+//			tempPos.y -= gravity;
+//
+//			tempPos.x = speed * Input.GetAxis ("Horizontal");
+//
+//			myCC.Move (tempPos * Time.deltaTime);
+//
+//			yield return new WaitForSeconds(.02f);
+//
+//
+//		}
+
+
+	void Update () {
 
 		tempPos.y -= gravity;
 
@@ -64,7 +81,7 @@ public class MoveCharacter : MonoBehaviour {
 				tempPos.y = jumpSpeed;
 				jumpCount++;
 			}
-			if (!myCC.isGrounded && jumpCount < 	jumpCountMax) {
+			if (!myCC.isGrounded && jumpCount < jumpCountMax) {
 				 
 				jumpCount++;
 
@@ -81,4 +98,14 @@ public class MoveCharacter : MonoBehaviour {
 			}
 		}
 	}
+//	void OnTriggerEnter (Collider other){
+//		if (other.gameObject.CompareTag ("crash") && crash) {
+//			crash = false;
+//		}
+//	}
+//	void OnTriggerExit (Collider other){
+//		if (other.gameObject.CompareTag ("crash") && !crash) {
+//			crash = true;
+//		}
+//	}
 }

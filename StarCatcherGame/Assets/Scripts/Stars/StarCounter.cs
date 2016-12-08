@@ -3,21 +3,24 @@ using System.Collections;
 using UnityEngine.UI;
 public class StarCounter : MonoBehaviour {
 
-	public int starCount = 0;
+
 	public Text starCountText;
 
 
-	void OnTriggerEnter () {
-		//StarAnimator.SetBool ("Destroy", true);
-		gameObject.SetActive (false);
-		starCount += 1;
-		AddStar ();
+	void OnTriggerEnter (Collider col) {
+
+		if (col.tag == "Player") {
+			gameObject.SetActive (false);
+			Statics.starCount += 1;
+			AddStar ();
+		}
 	}
 
 	public void AddStar() {
-		starCountText.text = "Stars: " + starCount;
+		starCountText.text = "Stars: " + Statics.starCount;
 	}
 	void Start () {
+		starCountText.text = "Stars: " + 0;
 		AddStar ();
 	}
 }

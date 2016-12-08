@@ -3,15 +3,15 @@ using System.Collections;
 
 public class Animation : MonoBehaviour {
 
-	MoveCharacter myMoveCharacter;
+	public MoveCharacter myMoveCharacter;
 	public Animator myAnimator;
 	private float _h;
 //	private float _v;
 
 	void Start () {
-		myMoveCharacter = new MoveCharacter ();
-		myAnimator = GetComponent<Animator> ();
-		myMoveCharacter.myCC = GetComponent<CharacterController> ();
+		//myMoveCharacter = new MoveCharacter ();
+		//myAnimator = GetComponent<Animator> ();
+		//myMoveCharacter.myCC = GetComponent<CharacterController> ();
 
 	}
 

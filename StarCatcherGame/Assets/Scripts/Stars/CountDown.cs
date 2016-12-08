@@ -13,11 +13,19 @@ public class CountDown : MonoBehaviour {
 	public int seconds;
 	public int minutes;
 
+	public Canvas ReplayMenu;
+	public Text Score;
+
+
+
 
 	void Start () {
 		seconds = (int)(remainingTime % secondsToMin); 
 		minutes = (int)(remainingTime / secondsToMin);
 		timer.text = minutes + ":" + seconds;
+		ReplayMenu = ReplayMenu.GetComponent<Canvas> ();
+		Score = Score.GetComponent<Text> ();
+		ReplayMenu.enabled = false;
 
 	}
 	// Update is called once per frame
@@ -29,7 +37,9 @@ public class CountDown : MonoBehaviour {
 		timer.text = minutes + ":" + seconds;
 
 		if (remainingTime <= 0) {
-			SceneManager.LoadScene (0);
-		}
+			Time.timeScale = 0;
+			ReplayMenu.enabled = true;
+			Score.text = "Score: " + Statics.starCount;		}
 	}
 }
+

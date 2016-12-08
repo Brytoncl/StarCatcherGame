@@ -1,49 +1,68 @@
 ﻿
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CloneStar : MonoBehaviour {
 
+	public StarControl myStarControl;
 	public Transform[] spawnPoints;
-	public GameObject[] stars;
-	public float spawnFrequency = 7;
+	private float spawnFrequency = 2;
 	public float DeactivateTime = 6;
 	public bool canSpawnStars = true;
 
+	public List<StarSpawner> AvailableStars;
 
 	private int i = 0;
 	private int j = 0;
 
-	IEnumerator DeactivateStars () {
-		yield return new WaitForSeconds (DeactivateTime);
-		stars [j].SetActive (false);
+	public void SendThisHandler (StarSpawner Stars)
+	{
+		AvailableStars.Add (Stars);
 	}
+
+
+
+
+	IEnumerator DeactivateStars () {
+		int x;
+
+		x = j;
+		yield return new WaitForSeconds (DeactivateTime);
+		AvailableStars[x].gameObject.SetActive (false);
+	}
+	IEnumerator Delay (){
+		yield return new WaitForSeconds (1f);
+		StartCoroutine(SpawnStars());
+	}
+
 
 	IEnumerator SpawnStars ()
 	{
 		while (canSpawnStars)
 		{
 			i = Random.Range(0, spawnPoints.Length - 1);
-			stars[j].transform.position = spawnPoints[i].position;
-			stars[j].SetActive(true);
+			AvailableStars[j].transform.position = spawnPoints[i].position;
+			AvailableStars[j].gameObject.SetActive(true);
 			StartCoroutine (DeactivateStars ());
 
 			yield return new WaitForSeconds(spawnFrequency);
 
-			if (j < stars.Length-1)
+			if (j < AvailableStars.Count-1)
 			{
 				j++;
 			} else
 			{
 				j = 0;
 			}
-			//Instantiate(star, spawnPoints[i].position, Quaternion.identity);
 
 		}
 	}
 	void Start () {
-		StartCoroutine(SpawnStars());
+		StarSpawner.SendThis += SendThisHandler;
+		StartCoroutine("Delay");
 
 	}
 
 }
+

@@ -4,9 +4,12 @@ using System;
 
 public class StarSpawner : MonoBehaviour {
 
-	public static Action<Transform> SendSpawner;
-	// Use this for initialization
+	public static Action <StarSpawner> SendThis;
+
 	void Start () {
-		SendSpawner (transform);
+		if (SendThis != null) {
+			SendThis (this);
+			}
+		this.gameObject.SetActive (false);
 	}
 }

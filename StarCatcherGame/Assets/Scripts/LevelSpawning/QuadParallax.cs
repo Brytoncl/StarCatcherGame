@@ -10,3 +10,4 @@ public class QuadParallax : MonoBehaviour {
 		GetComponent<Renderer> ().material.mainTextureOffset = offset;
 	}
 }
+	

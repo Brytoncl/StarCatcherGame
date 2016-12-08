@@ -5,54 +5,36 @@ using System.Collections.Generic;
 public class StarControl : MonoBehaviour {
 
 
-	public int forceTime = 10;
-	public float forceDuration = 0.1f;
+	public bool canAddForce = true;
+	public float forceDuration = .1f;
 	private Rigidbody rb;
-	public float forceRange = 10;
-	public float torqueRange = 2;
+	public int forceRangeHigh = 500;
+	public int forceRangeLow = 200;
 	private Vector3 forceVector;
-	private Vector3 torqueVector;
+	int i;
+
 
 	//private Animator StarAnimator;
 
-	void Start () {
-		//StarAnimator = GetComponent<Animator> ();
+	public void Start () {
+		//RunRandomForce ();
 		rb = GetComponent<Rigidbody> ();
-		StartCoroutine ("RunRandomForce");
-	}
-
-	IEnumerator RunRandomForce()
-	{
-
-		while (forceTime > 0) {
-			yield return new  WaitForSeconds (forceDuration);
-			forceVector.x = Random.Range (-forceRange,forceRange);
-			torqueVector.z = Random.Range (-torqueRange, torqueRange);
-			rb.AddTorque (torqueVector);
-			rb.AddForce (forceVector);
-			forceTime--;
-		}
-	}
-	public float endTime = 3;
-
-	public void Deactivate (){
-		//StarAnimator.SetBool ("Destroy", false);
-		gameObject.SetActive (false);
 
 	}
 
-	public List <Transform> spawners;
-	public List <Transform> stars;
-
-	void SpawnHandler (Transform _t) {
-		spawners.Add (_t);
+	void OnTriggerEnter () {
+//		i = Random.Range (-forceRangeHigh, -forceRangeLow);
+//		forceVector.x = i;
+//		rb.AddForce (forceVector);
 	}
-	void StarHandler (Transform _t)
-	{
-		stars.Add (_t);
+		
+//	IEnumerator RunRandomForce()
+//	{
+//		while (canAddForce) {
+//			forceVector.x = -100;
+//			rb.AddForce (forceVector);
+//			yield return new WaitForSeconds (forceDuration);
+//			}
+//		}
 	}
-//	void Start () {
-//		StarSpawner.SendSpawner += SpawnHandler;
-//		Star.SendStar += StarHandler;
-//	}
-}
+	
