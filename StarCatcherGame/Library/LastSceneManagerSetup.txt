@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Animations/Scenes/New Level.unity
+- path: Assets/FinalScenes/FinalLevelScene.unity
   isLoaded: 1
   isActive: 1
