@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 public class StarCounter : MonoBehaviour {
 
-
+	public AudioSource addStar;
 	public Text starCountText;
 
 
@@ -17,6 +17,7 @@ public class StarCounter : MonoBehaviour {
 	}
 
 	public void AddStar() {
+		addStar.Play ();
 		starCountText.text = "Stars: " + Statics.starCount;
 	}
 	void Start () {

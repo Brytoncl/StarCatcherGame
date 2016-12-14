@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Crash : MonoBehaviour {
 
+	public AudioSource dropStar;
 	public Transform bunny;
 
 	public Canvas ReplayMenu;
@@ -36,6 +37,7 @@ public class Crash : MonoBehaviour {
 	}
 	void OnTriggerEnter (){
 		if (canAttack == true) {
+			dropStar.Play ();
 			Statics.starCount -= 3;
 			if (Statics.starCount < 0) {
 				Statics.starCount = 0;
