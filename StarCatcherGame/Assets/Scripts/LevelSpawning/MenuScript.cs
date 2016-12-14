@@ -5,6 +5,12 @@
 
 	public class MenuScript : MonoBehaviour 
 	{
+	public AudioSource buttonClick;
+
+	IEnumerator delay () {
+		buttonClick.Play ();
+		yield return new WaitForSeconds (.2f);
+	}
 		public Canvas quitMenu;
 		public Button startText;
 		public Button exitText;
@@ -12,6 +18,7 @@
 		void Start ()
 
 		{
+
 			quitMenu = quitMenu.GetComponent<Canvas>();
 			startText = startText.GetComponent<Button> ();
 			exitText = exitText.GetComponent<Button> ();
@@ -22,6 +29,7 @@
 		public void ExitPress() 
 
 		{
+		StartCoroutine (delay());
 			quitMenu.enabled = true; 
 			startText.enabled = false; 
 			exitText.enabled = false;
@@ -31,6 +39,7 @@
 		public void NoPress() 
 
 		{
+		StartCoroutine (delay());
 			quitMenu.enabled = false; 
 			startText.enabled = true; 
 			exitText.enabled = true;
@@ -39,6 +48,7 @@
 
 		public void StartLevel () 
 		{
+		StartCoroutine (delay());
 			SceneManager.LoadScene (1); 
 
 		}
@@ -46,6 +56,7 @@
 		public void ExitGame () 
 
 		{
+		StartCoroutine (delay());
 			Application.Quit(); 
 
 		}

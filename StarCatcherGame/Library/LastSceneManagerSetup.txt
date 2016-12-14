@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/FinalScenes/FinalLevelScene.unity
+- path: Assets/FinalScenes/FinalMainMenu.unity
   isLoaded: 1
   isActive: 1

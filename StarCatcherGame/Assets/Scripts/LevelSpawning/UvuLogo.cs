@@ -6,18 +6,19 @@ public class UvuLogo : MonoBehaviour {
 
 	public int TimeUpFont = 10;
 	public Canvas logo; 
+	public AudioSource Crickets;
 
 	public IEnumerator FadeOutLogo(){
 		yield return new WaitForSeconds (TimeUpFont);
 		logo.enabled = false;
 	}
-	// Use this for initialization
-	void Start () {
-		StartCoroutine (FadeOutLogo ());
+	IEnumerator StartMusic () {
+		yield return new WaitForSeconds (TimeUpFont);
+		Crickets.Play ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	// Use this for initialization
+	public void Start () {
+		StartCoroutine (StartMusic ());
+		StartCoroutine (FadeOutLogo ());
 	}
 }
