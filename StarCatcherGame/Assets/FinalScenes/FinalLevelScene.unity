@@ -5606,7 +5606,7 @@ MonoBehaviour:
   myCC: {fileID: 985047697}
   speed: 20
   gravity: 2
-  jumpSpeed: 25
+  jumpSpeed: 35
   jumpCount: 0
   jumpCountMax: 2
   slideDuration: 20
