@@ -3675,7 +3675,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 58b21b50e029b4fe294260309ee8eb66, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1f6f89f4c224a41e7b44959246347f79, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.703
   m_Pitch: 1
@@ -7847,8 +7847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3dd1d32231e24d2482431b7ae0626c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  gravity: 40
+  speed: 35
+  gravity: 50
   jumpstrength: 15
   WolfRunning: 1
   charArt: {fileID: 184110921}
@@ -7891,7 +7891,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120

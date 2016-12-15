@@ -13,17 +13,19 @@ public class ReplayMenuScript : MonoBehaviour {
 	public void Replay () 
 	{
 		StartCoroutine (delay ());
-		SceneManager.LoadScene (1); 
 		Time.timeScale = 1;
 		Statics.starCount = 0;
+		SceneManager.LoadScene (1); 
 
 	}
 
 	public void MainMenu () {
 		StartCoroutine (delay ());
-		SceneManager.LoadScene (0); 
 		Time.timeScale = 1;
-		Statics.starCount = 0;}
+		Statics.starCount = 0;
+		SceneManager.LoadScene (0); 
+	}
+	
 
 	public void Quit () 
 

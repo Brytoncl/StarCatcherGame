@@ -37,6 +37,7 @@ public class CountDown : MonoBehaviour {
 		timer.text = minutes + ":" + seconds;
 
 		if (remainingTime <= 0) {
+			remainingTime = 60;
 			Time.timeScale = 0;
 			ReplayMenu.enabled = true;
 			Score.text = "Score: " + Statics.starCount;		}
